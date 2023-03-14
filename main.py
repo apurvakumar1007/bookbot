@@ -19,9 +19,17 @@ with open("books/frankenstein.txt") as f:
     sort_list = []
     for l_ch in l_char:
         sort_list.append({"char": l_ch, "num": l_char[l_ch]})
-   # sort_list.sort(reverse=True)
-        
-    print(sort_list)
+  
+    print(f"--- Begin report of {'books/frankenstein.txt'} ---")
+    print(f"{K} words found in the document")
+    print()
+
+    for item in sort_list:
+        if not item["char"].isalpha():
+            continue
+        print(f"The '{item['char']}' character was found {item['num']} times")
+
+    print("--- End report ---")
 
 
 
